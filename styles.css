@@ -1,0 +1,447 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;500&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: 'Noto Sans KR', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
+  font-weight: 300;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.page {
+  display: grid;
+  grid-template-columns: auto 0px 1fr;
+  grid-template-rows: auto 10px 1px 32px auto;
+  margin: 0 auto;
+  padding: 0 12px;
+}
+
+.sidebar {
+  grid-column: 1;
+  grid-row: 1;
+  align-self: start;
+}
+
+.page > nav {
+  grid-column: 3;
+  grid-row: 1;
+  align-self: end;
+}
+
+.page > hr {
+  grid-column: 1 / -1;
+  grid-row: 3;
+  width: 100%;
+  margin: 0;
+}
+
+.main {
+  grid-column: 1 / -1;
+  grid-row: 5;
+  min-width: 0;
+}
+
+a {
+  color: black;
+  text-decoration: none;
+}
+
+.cv-list a {
+  text-decoration: underline;
+}
+
+h1 {
+  font-weight: 300;
+  font-size: 15px;
+  line-height: 1.4;
+  text-align: left;
+  margin-top: 17px;
+  margin-bottom: 10px;
+  margin-right: 10px;
+  margin-left: 20px;
+}
+
+h1 .logo-dot {
+  font-size: 12px;
+}
+
+h2 {
+  font-weight: 300;
+  font-size: 12px;
+  margin-top: 4px;
+  margin-bottom: 4px;
+}
+
+b, strong {
+  font-weight: 300;
+}
+
+hr {
+  border: none;
+  height: 1px;
+  background-color: #ccc;
+  transform: scaleY(0.3);
+  margin: 0 0 30px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: flex-end;
+  gap: 30px;
+  margin: 0;
+  padding: 0;
+  margin-right: 20px;
+  font-size: 13px;
+}
+
+/* ==========================================================
+   작품 페이지 (hyejin-lee.html) 전용 스타일
+   이전에는 각 태그에 style="..."로 직접 넣었던 값들을
+   여기 클래스로 옮겨서, 값 하나만 바꿔도
+   같은 클래스를 쓰는 모든 요소에 한 번에 적용되게 했습니다.
+   ========================================================== */
+
+/* 작품 하나의 이미지/영상 폭 (화면을 거의 채우는 크기, 원본 비율 유지)
+   caption도 같은 값을 써서 이미지 시작/끝 위치와 텍스트 시작/끝 위치를 맞춘다 */
+:root {
+  --work-width: min(90vw, 1280px);
+  /* Dot, Rides, Pinballs' sources: 데스크탑 기준 가로 길이(예전엔 세로 900px 기준으로 역산한 값).
+     실제 높이는 aspect-ratio로 계산되며, 화면이 좁아지면 min(값, 90vw)로 폭도 같이 줄어든다.
+     비율은 각각 2371:3246, 3408:3596, 2480:3307 (가로:세로).
+     캡션도 같은 값을 써서 이미지 폭과 정확히 맞춘다 */
+  --dot-width: 500px;
+  --rides-width: 750px;
+  --pinballs-sources-width: 630px;
+}
+
+/* 작품 한 세트(영상/이미지 + 캡션)를 세로로 배치하는 기본 행
+   (미디어/이미지가 위, 캡션이 그 아래, 둘 다 가운데 정렬) */
+.work-row {
+  display: block;
+}
+
+/* 첫화면(index.html) Hanger 영상 위 여백을 조금 더 준다 */
+#top #hanger {
+  margin-top: 20px;
+}
+
+/* works.html 맨 위 작품(Dot)과 hr 사이 간격을 다른 페이지 첫 작품보다 조금 더 넓힌다 */
+#dot {
+  margin-top: 25px;
+}
+
+/* 위쪽 작품과 간격을 둬야 할 때 붙이는 보조 클래스 */
+.work-row--spaced {
+  margin-top: 230px;
+}
+
+/* 이미지만 들어가는 단순 블록 (Pinballs' sources, Rides 등) */
+.work-block--image {
+  margin-top: 230px;
+}
+
+/* 화살표 버튼 + 미디어를 감싸는 그룹
+   내용물(화살표+프레임) 크기만큼만 폭을 갖게 해서 margin:auto로 가운데 정렬한다.
+   화살표가 프레임 좌우에 같은 폭(20px + gap 8px)으로 붙어 있어서,
+   이 그룹을 가운데 정렬하면 안의 프레임도 자동으로 가운데에 온다. */
+.toggle-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: max-content;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+/* 좌/우 화살표 버튼 공통 스타일 */
+.nav-arrow {
+  flex: none;
+  width: 20px;
+  height: 20px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+
+/* 이미지/영상 패널을 순서대로 전환하는 고정 크기 프레임 */
+.media-frame {
+  position: relative;
+  max-width: 100%;
+}
+
+.media-frame--hanger {
+  width: var(--work-width);
+  aspect-ratio: 16 / 9;
+}
+
+/* 첫화면(index.html)의 Hanger만 살짝 축소한다.
+   works.html의 Hanger(같은 media-frame--hanger 클래스)는 영향받지 않는다 */
+#top .media-frame--hanger {
+  width: min(85vw, 1180px);
+}
+
+.media-frame--dot {
+  width: min(var(--dot-width), 90vw);
+  aspect-ratio: 2371 / 3246; /* Dot_1_5.png 원본 비율 유지, 화면 폭에 따라 높이도 함께 축소됨 */
+  height: auto;
+}
+
+
+.media-frame .frame-panel {
+  width: 100%;
+  height: 100%;
+}
+
+.media-frame .frame-panel img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.media-frame .frame-panel iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* 캡션(작품명 + 설명) 공통 스타일
+   위 이미지/영상과 같은 폭(--work-width)으로 맞추고 가운데 정렬해서,
+   텍스트 시작/끝 위치가 이미지 시작/끝 위치와 정확히 같아지게 한다 */
+.work-caption {
+  width: var(--work-width);
+  margin: 15px auto 0;
+  padding-left: 10px;
+  text-align: left;
+}
+
+/* Dot, Rides, Pinballs' sources: 위 이미지 폭(세로 900px 기준으로 역산한 값)에 맞춘다 */
+#dot .work-caption {
+  width: min(var(--dot-width), 90vw);
+}
+
+#rides .work-caption {
+  width: min(var(--rides-width), 90vw);
+}
+
+#pinballs-sources .work-caption {
+  width: min(var(--pinballs-sources-width), 90vw);
+}
+
+#diver .work-caption {
+  width: calc(var(--work-width) / 2);
+}
+
+/* 첫화면 Hanger: 위에서 줄인 영상 폭에 캡션도 맞춘다 */
+#top #hanger .work-caption {
+  width: min(85vw, 1180px);
+}
+
+/* Pot: 첫 번째 사진(Pot_1_1.png)이 가운데 80% 폭으로 들어가 있어서
+   프레임 좌우로 10%씩 여백이 생긴다. 캡션도 그 사진이 시작되는
+   지점에서 시작하도록, 다른 캡션과 같은 10px 들여쓰기를 더해서 맞춘다 */
+#pot .work-caption {
+  padding-left: calc(var(--work-width) * 0.1 + 10px);
+}
+
+.work-title {
+  font-size: 16px;
+  font-style: italic;
+}
+
+/* 작품명+캡션과 출처 사이에 한 줄 정도 여백을 둔다 */
+.source-note {
+  display: block;
+  margin-top: 20px;
+  font-size: 9px;
+  line-height: 1.4;
+}
+
+/* 이미지/영상 번호 설명(예: Pot의 #1~#4 안내), 캡션 안에서 오른쪽 정렬 */
+.image-legend {
+  display: block;
+  margin-top: 20px;
+  font-size: 9px;
+  line-height: 1.4;
+}
+
+/* 출처 목록이 긴 캡션(예: Pinballs)에 쓰는 작은 글씨 목록 */
+.source-list {
+  display: block;
+  margin-top: 20px;
+  font-size: 9px;
+  line-height: 1.4;
+}
+
+/* Pot, Rides: 폭 고정, 높이는 이미지 비율에 맞춰 자동으로 늘어나는 슬라이드 프레임 */
+.frame-strip {
+  max-width: 100%;
+}
+
+.frame-strip img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.frame-strip iframe {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border: 0;
+}
+
+/* Pot: 프레임 자체를 사진 실제 크기(--work-width의 80%)로 줄여서
+   화살표가 이미지 바로 옆(Dot과 동일한 gap 8px)에 붙도록 한다.
+   프레임 폭이 이미 사진 크기와 같으므로 내부 img/iframe은 100%로 채운다 */
+.frame-strip--pot {
+  width: calc(var(--work-width) * 0.8);
+}
+
+/* Rides: 프레임 높이를 900px로 고정하고 Rides_1 이미지 비율(3408x3596)에 맞춰
+   가로 길이를 역산해서, Rides_3(가로로 긴 이미지)로 넘어가도 프레임 크기가 유지되도록 함 */
+.frame-strip--rides {
+  width: min(var(--rides-width), 90vw);
+  aspect-ratio: 3408 / 3596; /* 원본 비율 유지, 화면 폭에 따라 높이도 함께 축소됨 */
+  overflow: hidden;
+}
+
+.frame-strip--rides > div {
+  height: 100%;
+}
+
+.frame-strip--rides img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* Rides 세 번째 이미지(Rides_3, 파노라마 형태)만 가로 1000px로 확대.
+   aspect-ratio는 다른 패널(3408/3596)보다 낮춰서(5/3) 상하단 여백(letterbox)을
+   줄이되, 이미지 자체 비율(3412:484)만큼 완전히 딱 맞추지는 않고 약간의 여백을 남긴다.
+   :has()로 ridesPanel3가 display:block(현재 보여지는 패널)일 때만 프레임 크기를 덮어쓴다 */
+.frame-strip--rides:has(#ridesPanel3[style*="block"]) {
+  width: min(1000px, 90vw);
+  aspect-ratio: 5 / 3;
+}
+
+.frame-strip--pinballs {
+  width: var(--work-width);
+}
+
+/* works.html의 Hanger: 프레임 폭을 첫 번째 사진과 같은 --work-width로 고정하고,
+   각 패널(사진/영상)은 자기 원본 비율대로 높이가 자동으로 정해지게 한다
+   (Pot과 동일한 방식). index.html의 Hanger는 media-frame--hanger를 그대로 써서
+   영향받지 않는다 */
+.frame-strip--hanger {
+  width: var(--work-width);
+}
+
+/* Pinballs 이미지를 유튜브 영상과 같은 16:9 비율로 상/하단 크롭 */
+#pinballsPanel1 {
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+}
+
+#pinballsPanel1 img {
+  height: 100%;
+  object-fit: cover;
+}
+
+/* 단순 참고/플레이스홀더 이미지 (Pinballs' sources, Diver, Ocean)
+   다른 작품들과 같은 폭(--work-width)으로 맞추고 가운데 정렬한다 */
+.placeholder-image {
+  display: block;
+  margin: 0 auto;
+  width: var(--work-width);
+}
+
+/* Pinballs' sources: 세로 길이를 900px로 제한 (원본 비율 유지, 위 --pinballs-sources-width 참고) */
+#pinballs-sources .placeholder-image {
+  width: min(var(--pinballs-sources-width), 90vw);
+  aspect-ratio: 2480 / 3307; /* 원본 비율 유지, 화면 폭에 따라 높이도 함께 축소됨 */
+  height: auto;
+}
+
+/* Diver: 가로 길이를 기존(--work-width)의 절반으로 축소 (원본 비율 유지, height는 auto) */
+#diver .placeholder-image {
+  width: calc(var(--work-width) / 2);
+}
+
+/* 이미지 로드 실패 시(파일명 오타, 파일 누락 등) 빈 자리로 남지 않고
+   회색 박스로 표시해서 문제가 있다는 걸 바로 알아볼 수 있게 한다.
+   (onerror로 이 클래스를 추가하면 적용됨, hyejin-lee.html의 script 참고) */
+.img-load-error {
+  background-color: #eee;
+  min-height: 120px;
+}
+
+/* 저작권 문구: 본문보다 작고 옅게, 페이지 맨 아래 오른쪽 정렬
+   grid-column을 지정해서 사이드바 칸이 아니라 페이지 전체 폭을 차지하게 하고,
+   grid-row을 .main(5번 행) 다음인 6번째 행으로 명시해서 자동 배치로 인해
+   위쪽의 빈 10px 행(2번 행)에 배치되는 것을 방지한다 */
+.site-footer {
+  grid-column: 1 / -1;
+  grid-row: 6;
+  text-align: right;
+  font-size: 10px;
+  color: black;
+  margin: 60px 25px 20px 0;
+}
+
+/* CV 페이지: 본문 텍스트가 사이드바 로고 "Hyejin"의 'j' 시작 위치에서 시작하도록 들여쓰기
+   (h1 margin-left 15px + "Hye" 텍스트 폭 29px = 44px)
+   맨 아래는 100px 여백을 둔다 */
+.cv-content {
+  margin-top: 20px;
+  margin-left: 80px;
+  margin-bottom: 100px;
+}
+
+/* 이름/거주지/이메일 등 소개 줄 (국문/영문 공통)
+   .cv-list li의 줄 간격(line-height 19.2px + margin-bottom 4px = 23.2px)과
+   똑같이 맞추기 위해 line-height를 23.2px로 지정한다 */
+.cv-intro {
+  margin: 0 0 10px;
+  line-height: 23.2px;
+}
+
+/* 학력/전시/선정 등 항목 리스트 (스크린리더가 항목을 하나씩 읽도록 ul로 구성) */
+.cv-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.cv-list li {
+  margin-bottom: 4px;
+}
+
+.cv-year {
+  margin-right: 4px;
+}
+
+/* 영문 섹션과 국문 섹션 사이 여백 */
+.cv-section--en {
+  margin-top: 100px;
+}
+
+/* Ocean 아래 여백 */
+#ocean {
+  margin-bottom: 200px;
+}
+

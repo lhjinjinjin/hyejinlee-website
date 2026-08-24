@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<title>Hyejin Lee — Works</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="서울에서 활동하는 시각예술가 이혜진(Hyejin Lee)의 작품 아카이브입니다.">
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+<div class="page">
+<div class="sidebar">
+<h1><a href="index.html">이혜진&nbsp;&nbsp;<span class="logo-dot">·</span>&nbsp;&nbsp;Hyejin Lee</a></h1>
+</div>
+<nav>
+<ul>
+  <li><a href="works.html">Works</a></li>
+  <li><a href="cv.html">CV</a></li>
+</ul>
+</nav>
+<hr>
+<main class="main">
+
+<!-- Dot -->
+<div id="dot" class="work-row">
+  <div class="toggle-group">
+    <button id="dotLeftArrow" class="nav-arrow" style="visibility: hidden;"
+      onclick="carouselPrev('dot', 2)" aria-label="이전 이미지/영상">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#999" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg>
+    </button>
+    <div class="media-frame media-frame--dot">
+      <div id="dotPanel1" class="frame-panel">
+        <img src="images/Dot.jpg" alt="Dot 작품 스틸 이미지" onerror="this.classList.add('img-load-error')">
+      </div>
+      <div id="dotPanel2" class="frame-panel" style="display: none;">
+        <iframe data-src="https://www.youtube.com/embed/Cwh9pcBUIvI"
+          frameborder="0" allowfullscreen
+          title="Dot 작품 영상"></iframe>
+      </div>
+    </div>
+    <button id="dotRightArrow" class="nav-arrow" style="visibility: visible;"
+      onclick="carouselNext('dot', 2)" aria-label="다음 이미지/영상">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#999" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg>
+    </button>
+  </div>
+  <p class="work-caption">
+    <span class="work-title">Dot</span><br>
+    2025<br>
+    interactive single-channel video, color, 4K, touchscreen, loop, 1 min.
+    <span class="source-note">Sources: Trading View</span>
+    <span class="image-legend">#1 Installation view (WWW SPACE 1, Seoul, Korea, 2025)<br>
+    #2 Video documentation</span>
+  </p>
+</div>
+
+<!-- Pot -->
+<div id="pot" class="work-row work-row--spaced">
+  <div class="toggle-group">
+    <button id="potLeftArrow" class="nav-arrow" style="visibility: hidden;"
+      onclick="carouselPrev('pot', 4)" aria-label="이전 이미지/영상">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#999" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg>
+    </button>
+    <div class="frame-strip frame-strip--pot">
+      <div id="potPanel1">
+        <img src="images/Pot_1.jpg" alt="Pot 작품 이미지 1" onerror="this.classList.add('img-load-error')">
+      </div>
+      <div id="potPanel2" style="display: none;">
+        <img src="images/Pot_2.jpg" alt="Pot 작품 이미지 2" onerror="this.classList.add('img-load-error')">
+      </div>
+      <div id="potPanel3" style="display: none;">
+        <img src="images/Pot_3.jpg" alt="Pot 작품 이미지 3" onerror="this.classList.add('img-load-error')">
+      </div>
+      <div id="potPanel4" style="display: none;">
+        <iframe data-src="https://www.youtube.com/embed/o3vIJO6KR0U"
+          frameborder="0" allowfullscreen
+          title="Pot 작품 영상"></iframe>
+      </div>
+    </div>
+    <button id="potRightArrow" class="nav-arrow" style="visibility: visible;"
+      onclick="carouselNext('pot', 4)" aria-label="다음 이미지/영상">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#999" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg>
+    </button>
+  </div>
+  <p class="work-caption">
+    <span class="work-title">Pot</span><br>
+    2025<br>
+    single-channel video, color, sound, 4K, 2 min 30 sec.
+    <span class="source-note">Sources: Trading View<br>
+    Music: Mt. Dust (Bird's Eye Thief)</span>
+    <span class="image-legend">#1 Installation view (WWW SPACE 1, Seoul, Korea, 2025)<br>
+    #2–3 Video still<br>
+    #4 Video</span>
+  </p>
+</div>
+
+<!-- Hanger -->
+<div id="hanger" class="work-row work-row--spaced">
+  <div class="toggle-group">
+    <button id="hangerLeftArrow" class="nav-arrow" style="visibility: hidden;"
+      onclick="carouselPrev('hanger', 3)" aria-label="이전 이미지/영상">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#999" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg>
+    </button>
+    <div class="frame-strip frame-strip--hanger">
+      <div id="hangerPanel1">
+        <img src="images/Hanger_1.jpg" alt="Hanger 설치 사진" onerror="this.classList.add('img-load-error')">
+      </div>
+      <div id="hangerPanel2" style="display: none;">
+        <img src="images/Hanger_2.jpg" alt="Hanger 작품 스틸 이미지" onerror="this.classList.add('img-load-error')">
+      </div>
+      <div id="hangerPanel3" style="display: none;">
+        <iframe data-src="https://www.youtube.com/embed/K-X99MMkOIk"
+          frameborder="0" allowfullscreen
+          title="Hanger 작품 영상"></iframe>
+      </div>
+    </div>
+    <button id="hangerRightArrow" class="nav-arrow" style="visibility: visible;"
+      onclick="carouselNext('hanger', 3)" aria-label="다음 이미지/영상">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#999" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg>
+    </button>
+  </div>
+  <p class="work-caption">
+    <span class="work-title">Hanger</span><br>
+    2025<br>
+    single-channel video, color, 4K, loop, 30 sec.
+    <span class="source-note">Sources:<br>
+    Baker et al., Bank of Korea (BOK), Caixin, Datastream, dataweb.usitc.gov, Fitch, FRED, Historical Statistics of the United States, HSBC, ISM, KDI, Korea International Trade Association (KITA), OECD, Oxford Economics, S&P Global Market Intelligence, The Federal Register, The White House, U.S. Department of Commerce, U.S. Federal Reserve, U.S. International Trade Commission, World Bank, WTO</span>
+    <span class="image-legend">#1 Installation view (Mijin Floor, Seoul, Korea, 2025)<br>
+    #2 Video still<br>
+    #3 Video</span>
+  </p>
+</div>
+
+<!-- 이미지 + 캡션 블록들 -->
+<div id="pinballs" class="work-row work-block--image">
+  <div class="toggle-group">
+    <button id="pinballsLeftArrow" class="nav-arrow" style="visibility: hidden;"
+      onclick="carouselPrev('pinballs', 2)" aria-label="이전 이미지/영상">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#999" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg>
+    </button>
+    <div class="frame-strip frame-strip--pinballs">
+      <div id="pinballsPanel1">
+        <img src="images/Pinballs.jpg" alt="Pinballs 작품 이미지" onerror="this.classList.add('img-load-error')">
+      </div>
+      <div id="pinballsPanel2" style="display: none;">
+        <iframe data-src="https://www.youtube.com/embed/xiSm0jivmpk?si=vfYWqDEqrThDwiCI"
+          title="Pinballs 작품 영상" frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
+    </div>
+    <button id="pinballsRightArrow" class="nav-arrow" style="visibility: visible;"
+      onclick="carouselNext('pinballs', 2)" aria-label="다음 이미지/영상">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#999" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg>
+    </button>
+  </div>
+  <p class="work-caption">
+    <span class="work-title">Pinballs</span><br>
+    2024<br>
+    single-channel video, color, FHD, loop, 30 sec. 
+    <span class="source-list">Sources:<br>
+    Bank of Korea Economic Statistics System, Bank of Korea Base Rate and Deposit/Lending Rates, 2019–2024<br>
+    Bank of Korea Economic Statistics System, South Korea GDP Growth Rate, 1960–2023<br>
+    Bank of Korea Economic Statistics System, South Korea Gross Savings Rate and Gross Domestic Investment Rate as % of GDP, 1953–2023<br>
+    Bank of Korea Economic Statistics System, South Korea Private Consumption, Facility Investment, and Construction Investment Growth Rates, 1960–2023<br>
+    FRED, US Federal Reserve Policy Interest Rate, Jul 1954–Dec 2023<br>
+    OECD, Fertility Rates Among Major Countries, 1970–2020<br>
+    OECD, Income Tax Rates as % of GDP Among Major Countries, 1965–2022<br>
+    OECD Economic Outlook, Annual Inflation Rates Among Major Countries, 2020–Nov 2023<br>
+    populationpyramid.net, South Korea Population Pyramid and Population, 2023<br>
+    Statistics Korea, South Korea Fertility Rate, 1995–2023<br>
+    Statistics Korea, South Korea National Debt Trends, 2018–2027<br>
+    Statistics Korea, South Korea Number of Marriages, 2000–2022<br>
+    Statistics Korea, South Korea Total Population and Population Growth Rate, 2011–2030<br>
+    UN World Population Prospects, Global Population Pyramid, 2021, 2050<br>
+    UN World Population Prospects, Life Expectancy by World Region, 1950–2100<br>
+    UN World Population Prospects, Population by World Region, 1950–2050<br>
+    UN World Population Prospects, Population Growth Rate by World Region, 1950–2050<br>
+    UN World Population Prospects, Projected Changes in South Korea's Working-Age and Dependent Population, 1950–2100<br>
+    UN World Population Prospects, Total Fertility Rate by World Region, 2022–2100<br>
+    U.S. Energy Information Administration (EIA), US Crude Oil Exports, Jan 2015–Jun 2023<br>
+    World Bank, Consumer Price Index Among Major Countries, 2020–Oct 2023<br>
+    World Bank, Fertility Rates Among Major Countries, 1960–2021<br>
+   </span>
+    <span class="image-legend">#1 Installation view (The Gallery at Dream Church, Ansan, Korea, 2025)<br>
+    #2 Video</span>
+  </p>
+</div>
+<div id="pinballs-sources" class="work-row work-block--image">
+  <img class="placeholder-image" src="images/Pinballs_sources.jpg" alt="Pinballs' sources 참고 이미지" onerror="this.classList.add('img-load-error')">
+  <p class="work-caption">
+    <span class="work-title">Pinballs' sources</span><br>
+    2024<br>
+    84.1 x 59.4cm<br> 
+    archival pigment print
+  </p>
+</div>
+
+<!-- Rides -->
+<div id="rides" class="work-row work-block--image">
+  <div class="toggle-group">
+    <button id="ridesLeftArrow" class="nav-arrow" style="visibility: hidden;"
+      onclick="carouselPrev('rides', 3)" aria-label="이전 이미지">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#999" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg>
+    </button>
+    <div class="frame-strip frame-strip--rides">
+      <div id="ridesPanel1">
+        <img src="images/Rides_1.jpg" alt="Rides 작품 이미지 1" onerror="this.classList.add('img-load-error')">
+      </div>
+      <div id="ridesPanel2" style="display: none;">
+        <img src="images/Rides_2.jpg" alt="Rides 작품 이미지 2" onerror="this.classList.add('img-load-error')">
+      </div>
+      <div id="ridesPanel3" style="display: none;">
+        <img src="images/Rides_3.jpg" alt="Rides 작품 이미지 3" onerror="this.classList.add('img-load-error')">
+      </div>
+    </div>
+    <button id="ridesRightArrow" class="nav-arrow" style="visibility: visible;"
+      onclick="carouselNext('rides', 3)" aria-label="다음 이미지">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#999" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg>
+    </button>
+  </div>
+  <p class="work-caption">
+    <span class="work-title">Rides</span><br>
+    2023<br>
+    digital image, 5 monitors, PC<br>
+    dimensions variable
+    <span class="source-note">Sources:<br>
+    Alphasquare, Kakao Stock Price (KRW) Chart, 2018–Feb 2023<br>
+    Alphasquare, USD/KRW Price Chart, Nov 2019–Feb 2023<br>
+    Bank of Korea, Bank of Korea Base Rate, 2018–2022<br>
+    Bloomberg, Global Commodity Prices, Jan 2020–Jul 2022<br>
+    Bloomberg, Non-Ferrous Metal and Grain Prices, Jan 2020–Jul 2022<br>
+    Bloomberg and Reuters, Natural Gas and Coal Prices, Jan 2020–Jul 2022<br>
+    CPB, World Trade Volume, 2000–2016<br>
+    ECB, European Central Bank Policy Interest Rate, 2018–2022<br>
+    FRED, US Federal Reserve Policy Interest Rate, Nov 2019–Dec 2022<br>
+    IMF, Grain Price Trends, 2019–2023<br>
+    investing.com, AGG Stock Price (USD) Chart, Nov 2019–Feb 2023<br>
+    investing.com, AMZN Stock Price (USD) Chart, Nov 2019–Feb 2023<br>
+    OECD, Inflation Rates Among Major Countries, Jan 2016–Nov 2022<br>
+    OECD and JP Morgan, Leading Economic Index and Global PMI, Jan 2022<br>
+    WHO, COVID-19 Confirmed Cases by Continent, Nov 2019–Jan 2023<br>
+    WTO, World Services Trade, Jan 2019–Aug 2022<br>
+    Yahoo Finance, GLD Stock Price (USD) Chart, Nov 2019–Feb 2023<br>
+    Yahoo Finance, TSLA Stock Price (USD) Chart, Nov 2019–Feb 2023<br>
+    </span>
+    <span class="image-legend">#1 Installation view (Hongik Museum of Art, Seoul, Korea, 2023)<br>
+    #2 Installation detail<br>
+    #3 <em>Rides</em>, 2023, 484 x 3412px, digital image</span>
+  </p>
+</div>
+
+<div id="diver" class="work-row work-block--image">
+  <img class="placeholder-image" src="images/Diver.jpg" alt="Diver 작품 이미지" onerror="this.classList.add('img-load-error')">
+  <p class="work-caption">
+    <span class="work-title">Diver</span><br>
+    2023 <br>
+    91 x 116.8cm <br>
+    archival pigment print on canvas, acrylic, vitrail, marker, glass bead gel<br>
+  </p>
+</div>
+<div id="ocean" class="work-row work-block--image">
+  <img class="placeholder-image" src="images/Ocean.jpg" alt="Ocean 작품 이미지" onerror="this.classList.add('img-load-error')">
+  <p class="work-caption">
+    <span class="work-title">Ocean</span><br>
+    2022 <br>
+    162.2 x 260.6cm <br>
+    archival pigment print on canvas, acrylic, oil, marker, glass bead gel<br>
+  </p>
+</div>
+
+</main>
+
+<footer class="site-footer">© <span id="copyright-year">2026</span> Hyejin Lee. All rights reserved.</footer>
+
+</div>
+
+<script>
+  /* Hanger, Dot, Pot, Rides 공용 캐러셀
+     prefix 예: 'hanger' → hangerPanel1/hangerPanel2/... , hangerLeftArrow, hangerRightArrow
+     형태의 id를 그대로 재사용하기 위해 접두어와 총 패널 수만 넘겨받습니다. */
+  /* Hanger, Dot, Pot, Rides 공용 캐러셀
+     prefix 예: 'hanger' → hangerPanel1/hangerPanel2/... , hangerLeftArrow, hangerRightArrow
+     형태의 id를 그대로 재사용하기 위해 접두어와 총 패널 수만 넘겨받습니다.
+
+     아래 전체를 즉시실행함수(IIFE)로 감싸서, carouselState 같은 내부 변수가
+     전역(window)에 그대로 노출되지 않도록 합니다. HTML의 onclick="carouselNext(...)"에서
+     호출할 수 있도록 carouselNext/carouselPrev 두 함수만 window에 등록합니다. */
+  (function () {
+    var carouselState = {};
+
+    function carouselShow(prefix, total, n) {
+      /* 화살표가 경계에서 숨겨져 있어 보통은 범위를 벗어나지 않지만,
+         키보드 조작 등 다른 진입 경로가 생겨도 안전하도록 범위를 고정한다 */
+      n = Math.max(1, Math.min(total, n));
+      for (var i = 1; i <= total; i++) {
+        var panel = document.getElementById(prefix + 'Panel' + i);
+        panel.style.display = (i === n) ? 'block' : 'none';
+        /* 패널이 실제로 열릴 때만 유튜브 iframe의 src를 주입 (lazy-load).
+           보이지 않는 영상들이 미리 로드되어 트래픽을 잡아먹는 것을 방지한다. */
+        if (i === n) {
+          var iframe = panel.querySelector('iframe[data-src]');
+          if (iframe) {
+            iframe.src = iframe.getAttribute('data-src');
+            iframe.removeAttribute('data-src');
+          }
+        }
+      }
+      document.getElementById(prefix + 'LeftArrow').style.visibility = (n === 1) ? 'hidden' : 'visible';
+      document.getElementById(prefix + 'RightArrow').style.visibility = (n === total) ? 'hidden' : 'visible';
+      carouselState[prefix] = n;
+    }
+
+    function carouselNext(prefix, total) {
+      carouselShow(prefix, total, (carouselState[prefix] || 1) + 1);
+    }
+    function carouselPrev(prefix, total) {
+      carouselShow(prefix, total, (carouselState[prefix] || 1) - 1);
+    }
+
+    window.carouselNext = carouselNext;
+    window.carouselPrev = carouselPrev;
+  })();
+
+  /* footer 저작권 연도를 매년 손으로 고치지 않도록 현재 연도로 자동 표시 */
+  document.getElementById('copyright-year').textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
